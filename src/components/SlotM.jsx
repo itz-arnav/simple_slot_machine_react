@@ -1,10 +1,15 @@
 import React from "react";
+import validate from "./validate";
 
 function SlotM(props){
-      props.generate();
+
+      let obj = props.gen();
+      let message = validate(obj);
+
       return (
             <>
-            <h2 className="emojis">{props.obj.x} {props.obj.y} {props.obj.z}</h2>
+            <h2 className="emojis">{obj.x} , {obj.y} , {obj.z}</h2>
+            <h2 className="text_msg">{message}</h2>
             </>
       );
 }
